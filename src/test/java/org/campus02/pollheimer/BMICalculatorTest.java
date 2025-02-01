@@ -28,4 +28,12 @@ public class BMICalculatorTest {
         BMICalculator calculator2 = new BMICalculator("Marie", "Schneider", 167, 60.0, 'w');
         assertEquals(21.51, calculator2.calculateBMI(), 0.01);
     }
+    @Test
+    void testCalculateBMICategory () {
+        BMICalculator calculator = new BMICalculator("Hans", "Huetter", 180, 120.0, 'm');
+        assertEquals(2, calculator.calculateBMICategory());
+
+        BMICalculator calculator2 = new BMICalculator("Hanna", "Hermann", 170, 70.0, 'w');
+        assertEquals(1, calculator2.calculateBMICategory());
+    }
 }
