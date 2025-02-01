@@ -57,7 +57,7 @@ public class BMICalculator {
             case -1: return "Untergewicht";
             case 0: return "Normalgewicht";
             case 1: return "Uebergewicht";
-            case 2: return "Sehr starkes Übergewicht";
+            case 2: return "Sehr starkes Uebergewicht";
             default: return "Nicht klassifiziert";
         }
     }
