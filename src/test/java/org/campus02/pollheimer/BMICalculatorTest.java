@@ -44,4 +44,14 @@ public class BMICalculatorTest {
         BMICalculator calculator2 = new BMICalculator("Jette", "Klim", 170, 70.0, 'w');
         assertEquals("Uebergewicht", calculator2.getBMICategoryName());
     }
+    @Test
+    public void testSetterMethods() {
+        BMICalculator calculator = new BMICalculator("Tom", "Miller", 192, 75.0, 'm');
+
+        calculator.setBodyHeight(180);
+        assertEquals(180, calculator.getBodyHeight());
+
+        calculator.setBodyWeight(80.0);
+        assertEquals(80.0, calculator.getBodyWeight());
+    }
 }
