@@ -36,4 +36,12 @@ public class BMICalculatorTest {
         BMICalculator calculator2 = new BMICalculator("Hanna", "Hermann", 170, 70.0, 'w');
         assertEquals(1, calculator2.calculateBMICategory());
     }
+    @Test
+    void testGetBMICategoryName () {
+        BMICalculator calculator = new BMICalculator("Johannes", "Jaucher", 180, 120.0, 'm');
+        assertEquals("Sehr starkes Uebergewicht", calculator.getBMICategoryName());
+
+        BMICalculator calculator2 = new BMICalculator("Jette", "Klim", 170, 70.0, 'w');
+        assertEquals("Uebergewicht", calculator2.getBMICategoryName());
+    }
 }
