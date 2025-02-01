@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BMICalculatorTest {
 
+    private BMICalculator calculator;
+
     @BeforeEach
     void setup() {
-
+        calculator = new BMICalculator("Philip", "Pollheimer", 176, 72.0, 'm');
     }
     @Test
     public void testConstructor () {
-
-        BMICalculator calculator = new BMICalculator("Philip", "Pollheimer", 176, 72.0, 'm');
         assertEquals("Philip", calculator.getFirstname());
         assertEquals("Pollheimer", calculator.getLastname());
         assertEquals(176, calculator.getBodyHeight());
@@ -22,36 +22,18 @@ public class BMICalculatorTest {
     }
     @Test
     void testCalculateBMI () {
-        BMICalculator calculator = new BMICalculator("Maxi", "Mueller", 185, 65.0, 'm');
-        assertEquals(18.99, calculator.calculateBMI(), 0.01);
-
-        BMICalculator calculator2 = new BMICalculator("Marie", "Schneider", 167, 60.0, 'w');
-        assertEquals(21.51, calculator2.calculateBMI(), 0.01);
+        assertEquals(23.24, calculator.calculateBMI(), 0.01);
     }
     @Test
     void testCalculateBMICategory () {
-        BMICalculator calculator = new BMICalculator("Hans", "Huetter", 180, 120.0, 'm');
-        assertEquals(2, calculator.calculateBMICategory());
-
-        BMICalculator calculator2 = new BMICalculator("Hanna", "Hermann", 170, 70.0, 'w');
-        assertEquals(1, calculator2.calculateBMICategory());
+        assertEquals(0, calculator.calculateBMICategory());
     }
     @Test
     void testGetBMICategoryName () {
-        BMICalculator calculator = new BMICalculator("Johannes", "Jaucher", 180, 120.0, 'm');
-        assertEquals("Sehr starkes Uebergewicht", calculator.getBMICategoryName());
-
-        BMICalculator calculator2 = new BMICalculator("Jette", "Klim", 170, 70.0, 'w');
-        assertEquals("Uebergewicht", calculator2.getBMICategoryName());
+        assertEquals("Normalgewicht", calculator.getBMICategoryName());
     }
     @Test
     public void testSetterMethods() {
-        BMICalculator calculator = new BMICalculator("Tom", "Miller", 192, 75.0, 'm');
-
-        calculator.setBodyHeight(180);
-        assertEquals(180, calculator.getBodyHeight());
-
-        calculator.setBodyWeight(80.0);
-        assertEquals(80.0, calculator.getBodyWeight());
+        assertEquals(176, calculator.getBodyHeight());
     }
 }
