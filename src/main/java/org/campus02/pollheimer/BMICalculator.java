@@ -16,15 +16,36 @@ public class BMICalculator {
         this.gender = gender;
     }
 
-    public String getFirstname() { return firstname; }
-    public String getLastname() { return lastname; }
-    public int getBodyHeight() { return bodyHeight; }
-    public void setBodyHeight(int bodyHeight) { this.bodyHeight = bodyHeight; }
-    public double getBodyWeight() { return bodyWeight; }
-    public void setBodyWeight(double bodyWeight) { this.bodyWeight = bodyWeight; }
-    public char getGender() { return gender; }
+    public String getFirstname()
+    {
+        return firstname;
+    }
+    public String getLastname()
+    {
+        return lastname;
+    }
+    public int getBodyHeight()
+    {
+        return bodyHeight;
+    }
+    public void setBodyHeight(int bodyHeight)
+    {
+        this.bodyHeight = bodyHeight;
+    }
+    public double getBodyWeight()
+    {
+        return bodyWeight;
+    }
+    public void setBodyWeight(double bodyWeight)
+    {
+        this.bodyWeight = bodyWeight;
+    }
+    public char getGender()
+    {
+        return gender;
+    }
 
-    // BMI-Berechnung
+    // Berechne den BMI
     public double calculateBMI() {
         double heightInMeters = bodyHeight / 100.0;
         double bmi = bodyWeight / (heightInMeters * heightInMeters);
@@ -50,7 +71,7 @@ public class BMICalculator {
        return -1;
     }
 
-    // Kategorie-Namen
+    // Methode für Kategorien
     public String getBMICategoryName() {
         switch (calculateBMICategory()) {
             case -2: return "Sehr starkes Untergewicht";
@@ -62,7 +83,7 @@ public class BMICalculator {
         }
     }
 
-    // Private Rundungsmethode
+    // Methode fürs Runden auf 2 Kommawerte
     private double round(double value) {
         return Math.round(value * 100.0) / 100.0;
     }
