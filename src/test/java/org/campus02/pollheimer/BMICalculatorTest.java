@@ -35,5 +35,6 @@ public class BMICalculatorTest {
     @Test
     public void testSetterMethods() {
         assertEquals(176, calculator.getBodyHeight());
+        assertEquals(72, calculator.getBodyWeight());
     }
 }
